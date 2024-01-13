@@ -5,7 +5,7 @@ BEGIN;
 CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;
 CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
-create schema is not exists auth
+CREATE SCHEMA IF NOT EXISTS auth;
 
 -- functions
 CREATE FUNCTION auth.set_current_timestamp_updated_at ()
