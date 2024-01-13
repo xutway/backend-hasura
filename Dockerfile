@@ -16,6 +16,7 @@ RUN npm i -g pnpm@8.6.2
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile --prod  && pnpm store prune
 COPY migrations/ ./migrations/
+COPY initdb.d/ ./initdb.d/
 COPY email-templates/ ./email-templates
 COPY --from=builder ./app/dist dist/
 HEALTHCHECK --interval=60s --timeout=2s --retries=3 CMD wget http://localhost:${AUTH_PORT}/healthz -q -O - > /dev/null 2>&1
