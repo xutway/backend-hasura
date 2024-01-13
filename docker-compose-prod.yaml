@@ -29,6 +29,8 @@ services:
     depends_on:
       - postgres
       - graphql-engine
+    env_file:
+      - stack.env
     environment:
       AUTH_HOST: '0.0.0.0'
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD:-secretpgpassword}@postgres:5432/postgres
