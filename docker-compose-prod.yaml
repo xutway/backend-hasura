@@ -42,10 +42,6 @@ services:
       - '4000:4000'
     volumes:
       - ./email-templates:/app/email-templates
-  dashboard:
-    image: nhost/dashboard:0.7.4
-    ports:
-      - "3030:3000"
   mailhog:
     image: mailhog/mailhog
     environment:
